@@ -1,0 +1,41 @@
+<div id="signup-page">
+    <div class="signup-container">
+        <div class="signup-section">
+            <div class="signup-details">
+                <h1>Create Account</h1>
+                <form #signupForm="ngForm" (ngSubmit)="signupUser(signupForm.value)">
+        <div class="input-box">
+          <p class="input-head">Email</p>
+          <input type="text" required #email="ngModel" name="text" placeholder="Enter your Email" ngModel />
+          <p class="error" *ngIf="email.invalid && email.touched">*Please enter correct email</p>
+        </div>
+        <div class="input-box">
+            <p class="input-head">Create Password</p>
+            <input type="password" required #create="ngModel" name="password" placeholder="Enter your Password" minlength="6" ngModel />
+            <p class="error" *ngIf="create.invalid && create.touched">*Please Enter 6 Character Long Password</p>
+          </div>
+        <div class="input-box">
+            <p class="input-head">Confirm Password</p>
+            <input type="password" required #confirm="ngModel" name="password" placeholder="Enter your Password" minlength="6" ngModel />
+            <p class="error" *ngIf="confirm.invalid && confirm.touched">*Please Enter 6 Character Long Password</p>
+          </div>
+          <div class="input-button">
+            <input type="submit" value="SIGNUP" />
+          </div>
+          </form>
+          <h5>OR</h5>
+          <div class="social-media">
+            <img src="assets\image\google.svg" alt="a" />
+            <img src="assets\image\facebook.svg" alt="b" />
+            <img src="assets\image\linkedin.svg" alt="c" />
+          </div>
+          <div class="input-sign-up">
+            <p>Already have account?   <span><a routerLink="/login">LOGIN</a></span></p>
+          </div>
+        </div>
+        <div class="signup-img">
+            <img src="assets\image\img2.jpg" alt="log-1" />
+          </div>
+    </div>
+</div>
+</div>
